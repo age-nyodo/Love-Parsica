@@ -6,39 +6,54 @@
   <title>Love-Parsica</title>
 
   <style>
+
+    /* お店の名前 */
     h1 {
       font-size: 50px;
       text-align: center;
     }
 
+    /* 商品を並べる場所 */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 250px);
+      gap: 50px;
+      justify-content: center;
+    }
+
+    /* ひとつひとつの商品 */
     .product {
-      width: 250px;
-      margin: 60px auto;
       text-align: center;
     }
 
+    /* 商品画像 */
     .product-image {
       width: 250px;
       height: 250px;
       background-color: #f5f5f5;
+
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
+    /* 商品名 */
     .product-name {
       font-size: 20px;
       margin-top: 15px;
     }
 
+    /* 商品名のリンク */
+    .product-name a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 値段 */
     .price {
       font-size: 16px;
     }
 
-    .product-link {
-      text-decoration: none;
-      color: inherit;
-    }
   </style>
 </head>
 
@@ -46,7 +61,13 @@
 
   <h1>Love Parsica</h1>
 
-  <a href="product.html" class="product-link">
+
+  <!-- 商品一覧 -->
+
+  <div class="products">
+
+
+    <!-- 商品① -->
 
     <div class="product">
 
@@ -55,7 +76,7 @@
       </div>
 
       <div class="product-name">
-        Star Pouch
+        <a href="product.html">Star Pouch</a>
       </div>
 
       <div class="price">
@@ -64,7 +85,65 @@
 
     </div>
 
-  </a>
+
+    <!-- 商品② -->
+
+    <div class="product">
+
+      <div class="product-image">
+        仮の商品画像
+      </div>
+
+      <div class="product-name">
+        <a href="product2.html">Ribbon Pouch</a>
+      </div>
+
+      <div class="price">
+        ¥3,000
+      </div>
+
+    </div>
+
+
+    <!-- 商品③ -->
+
+    <div class="product">
+
+      <div class="product-image">
+        仮の商品画像
+      </div>
+
+      <div class="product-name">
+        <a href="product3.html">Heart Keychain</a>
+      </div>
+
+      <div class="price">
+        ¥1,500
+      </div>
+
+    </div>
+
+
+    <!-- 商品④ -->
+
+    <div class="product">
+
+      <div class="product-image">
+        仮の商品画像
+      </div>
+
+      <div class="product-name">
+        <a href="product4.html">Cute Bag</a>
+      </div>
+
+      <div class="price">
+        ¥4,000
+      </div>
+
+    </div>
+
+
+  </div>
 
 </body>
 
