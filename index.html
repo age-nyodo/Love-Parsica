@@ -36,19 +36,25 @@
     }
 
 
-    /* 開いたときのカテゴリー一覧 */
+    /* カテゴリーメニュー */
     .category-menu {
       margin-top: 15px;
     }
 
 
     /* ALL / BAG / POUCH / KEYCHAIN */
-    .category-menu a {
+    .category-menu button {
       display: block;
-      margin: 10px;
 
-      text-decoration: none;
-      color: inherit;
+      margin: 10px auto;
+
+      background: none;
+      border: none;
+
+      font-family: serif;
+      font-size: 16px;
+
+      cursor: pointer;
     }
 
 
@@ -80,6 +86,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      cursor: pointer;
+    }
+
+
+    /* 商品画像のリンク */
+    .product-image-link {
+      text-decoration: none;
+      color: inherit;
     }
 
 
@@ -87,13 +102,6 @@
     .product-name {
       font-size: 20px;
       margin-top: 15px;
-    }
-
-
-    /* 商品名のリンク */
-    .product-name a {
-      text-decoration: none;
-      color: inherit;
     }
 
 
@@ -125,13 +133,21 @@
 
     <div class="category-menu">
 
-      <a href="#">ALL</a>
+      <button onclick="showCategory('all')">
+        ALL
+      </button>
 
-      <a href="#">BAG</a>
+      <button onclick="showCategory('bag')">
+        BAG
+      </button>
 
-      <a href="#">POUCH</a>
+      <button onclick="showCategory('pouch')">
+        POUCH
+      </button>
 
-      <a href="#">KEYCHAIN</a>
+      <button onclick="showCategory('keychain')">
+        KEYCHAIN
+      </button>
 
     </div>
 
@@ -146,18 +162,18 @@
 
     <!-- 商品1 -->
 
-    <div class="product">
+    <div class="product" data-category="pouch">
 
-      <div class="product-image">
-        仮の商品画像
-      </div>
+      <a href="product.html" class="product-image-link">
+
+        <div class="product-image">
+          仮の商品画像
+        </div>
+
+      </a>
 
       <div class="product-name">
-
-        <a href="product.html">
-          Star Pouch
-        </a>
-
+        Star Pouch
       </div>
 
       <div class="price">
@@ -170,18 +186,18 @@
 
     <!-- 商品2 -->
 
-    <div class="product">
+    <div class="product" data-category="bag">
 
-      <div class="product-image">
-        仮の商品画像
-      </div>
+      <a href="product2.html" class="product-image-link">
+
+        <div class="product-image">
+          仮の商品画像
+        </div>
+
+      </a>
 
       <div class="product-name">
-
-        <a href="product2.html">
-          Ribbon Bag
-        </a>
-
+        Ribbon Bag
       </div>
 
       <div class="price">
@@ -194,18 +210,18 @@
 
     <!-- 商品3 -->
 
-    <div class="product">
+    <div class="product" data-category="keychain">
 
-      <div class="product-image">
-        仮の商品画像
-      </div>
+      <a href="product3.html" class="product-image-link">
+
+        <div class="product-image">
+          仮の商品画像
+        </div>
+
+      </a>
 
       <div class="product-name">
-
-        <a href="product3.html">
-          Heart Keychain
-        </a>
-
+        Heart Keychain
       </div>
 
       <div class="price">
@@ -218,18 +234,18 @@
 
     <!-- 商品4 -->
 
-    <div class="product">
+    <div class="product" data-category="pouch">
 
-      <div class="product-image">
-        仮の商品画像
-      </div>
+      <a href="product4.html" class="product-image-link">
+
+        <div class="product-image">
+          仮の商品画像
+        </div>
+
+      </a>
 
       <div class="product-name">
-
-        <a href="product4.html">
-          Mini Pouch
-        </a>
-
+        Mini Pouch
       </div>
 
       <div class="price">
@@ -240,6 +256,38 @@
 
 
   </div>
+
+
+
+  <!-- JavaScript -->
+
+  <script>
+
+    function showCategory(category) {
+
+      const products = document.querySelectorAll(".product");
+
+
+      products.forEach(function(product) {
+
+        if (
+          category === "all" ||
+          product.dataset.category === category
+        ) {
+
+          product.style.display = "block";
+
+        } else {
+
+          product.style.display = "none";
+
+        }
+
+      });
+
+    }
+
+  </script>
 
 
 </body>
